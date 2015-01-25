@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app="diet4dummies" class="ng-scope">
+<head>
+    <!-- Charset -->
+    <meta charset="utf-8">
+    <!-- Responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Explorer newest rendering -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Style -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/app.css"/>
+
+    <!-- Angular and dependencies -->
+    <script type="text/javascript" src="js/angular.min.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+
+    <!-- created new module about recipes-->
+    <script type="text/javascript" src="js/recipe.js"></script>
+
+</head>
+<body ng-controller="CookbookController as cbCtrl" class="list-group">
+<header>
+    <h1 class="text-center"><b> Diet4Dummies </b></h1>
+    <h2 class="text-center"> - an Angular CookBook - </h2>
+</header>
+
+<!--  Recipe Container  -->
+<div class="list-group-item" ng-repeat="recipe in cbCtrl.recipes">
+    <h3>
+        {{recipe.name}}
+        <em class="pull-right">{{recipe.cost | currency}}</em>
+    </h3>
+
+    <!-- Image Gallery  -->
+    <recipe-gallery></recipe-gallery>
+
+    <!--  Tabs Element Directive  -->
+    <recipe-tabs></recipe-tabs>
+
+</div>
+
+</body>
+</html>

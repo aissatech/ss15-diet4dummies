@@ -1,0 +1,204 @@
+<!doctype html>
+<html>
+<head>
+
+    <!-- CSS -->
+    <!--<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/social-buttons.css">
+
+    <!-- Import Firebase e Firebase Login -->
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/firebase.js"></script>
+    <!--<script type="text/javascript" src="https://cdn.firebase.com/js/simple-login/1.6.1/firebase-simple-login.js"></script>-->
+
+    <script type="text/javascript">
+
+        //$(function(){
+        // Firebase reference
+        var ref = new Firebase("https://diet4dummies.firebaseio.com");
+
+        // clicking on the Registration link
+        $('#register').click(function(){
+            // we create a user
+            ref.createUser({
+                email    : "carla.conti@example.com",
+                password : "pluto"
+            }, function(error) {
+                if (error === null) {
+                    console.log("User created successfully");
+                } else {
+                    console.log("Error creating user:", error);
+                }
+            });
+        });
+
+        // login with email e password
+        ref.authWithPassword({
+            email    : "carla.conti@example.com",
+            password : "pluto"
+        }, function(error, authData) {
+            if (error) {
+                console.log("Login Failed!", error);
+            } else {
+                console.log("Authenticated successfully with payload:", authData);
+            }
+        });
+
+        $('#facebooklogin').click(function(){
+            //alert("login");
+
+            // If your user does not have an existing session, you can prompt the user to login and then invoke the
+            // Facebook login popup (e.g. after they have clicked a "Login" button) with the following snippet:
+            // var ref = new Firebase("https://diet4dummies.firebaseio.com");
+
+            ref.authWithOAuthPopup("facebook", function(error, authData) {
+                //alert(authData);
+                if (error) {
+                    console.log("Login Failed!", error);
+                } else if(authData) {
+                    console.log("UserId: " + authData.uid + " - Provider: " + authData.provider +
+                            " - Token: " + authData.token + " - Auth: " + authData.auth + " - Expires: " + authData.expires +
+                            " - FacebookId: " + authData.facebook.id + " - facebook.displayName: " + authData.facebook.displayName +
+                            " - Facebook.email: " + authData.facebook.email);
+                } else {
+                    // the access token will allow us to make Open Graph API calls
+                    console.log(authData.facebook.accessToken);
+                }
+            },  {
+                remember: "sessionOnly",
+                scope: "email,user_likes" // the permissions requested
+            }); // end auth
+        }); //end click
+        //}); // end jquery
+
+        // <YOUR-FIREBASE> --> diet4dummies
+        // https://auth.firebase.com/v2/diet4dumiies/auth/facebook/callback
+
+        // login with google
+        $('#googlelogin').click(function(){
+            alert("google");
+
+            ref.authWithOAuthPopup("google", function(error, authData) {
+                alert(authData);
+                if (error) {
+                    console.log("Login Failed!", error);
+                } else if(authData) {
+                    console.log("UserId: " + authData.uid + " - Provider: " + authData.provider +
+                            " - Token: " + authData.token + " - Auth: " + authData.auth + " - Expires: " + authData.expires +
+                            " - GoogleId: " + authData.google.id + " - google.displayName: " + authData.google.displayName +
+                            " - Google.email: " + authData.google.email);
+                } else {
+                    // the access token will allow us to make Open Graph API calls
+                    console.log(authData.google.accessToken);
+                }
+            },  {
+                remember: "sessionOnly",
+                scope: "email" // the permissions requested
+            }); // end auth
+        }); //end click
+
+        // login with twitter
+        $('#twitterlogin').click(function(){
+            alert("twitter");
+
+            ref.authWithOAuthPopup("twitter", function(error, authData) {
+                alert(authData);
+                if (error) {
+                    console.log("Login Failed!", error);
+                } else if(authData) {
+                    console.log("UserId: " + authData.uid + " - Provider: " + authData.provider +
+                            " - Token: " + authData.token + " - Auth: " + authData.auth + " - Expires: " + authData.expires +
+                            " - TwitterId: " + authData.twitter.id + " - twitter.displayName: " + authData.twitter.displayName +
+                            " - Twitter.email: " + authData.twitter.email);
+                } else {
+                    // the access token will allow us to make Open Graph API calls
+                    console.log(authData.twitter.accessToken);
+                }
+            },  {
+                remember: "sessionOnly"
+            }); // end auth
+        }); //end click
+
+        // login with github
+        $('#githublogin').click(function(){
+            alert("github");
+
+            ref.authWithOAuthPopup("github", function(error, authData) {
+                alert(authData);
+                if (error) {
+                    console.log("Login Failed!", error);
+                } else if(authData) {
+                    console.log("UserId: " + authData.uid + " - Provider: " + authData.provider +
+                            " - Token: " + authData.token + " - Auth: " + authData.auth + " - Expires: " + authData.expires +
+                            " - githubId: " + authData.github.id + " - github.displayName: " + authData.github.displayName +
+                            " - github.email: " + authData.github.email);
+                } else {
+                    // the access token will allow us to make Open Graph API calls
+                    console.log(authData.github.accessToken);
+                }
+            },  {
+                remember: "sessionOnly",
+                scope: "user,gist" // the permissions requested
+            }); // end auth
+        }); //end click
+
+
+        // window close
+        $('#windowclose').click(function(){
+            window.close();
+        });
+
+        //}); // end jquery
+
+    </script>
+</head>
+<body>
+
+<!--login modal-->
+<div id="loginModal" class="modal show" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" id="windowclose">×</button>
+                <h2 class="text-center"><img src="img/photo.jpg?sz=100" class="img-circle"><br>Login</h2>
+            </div>
+            <div class="modal-body">
+                <form class="form col-md-12 center-block">
+                    <div class="form-group">
+                        <input type="text" class="form-control input-lg" placeholder="Email" value="carla.conti@example.com">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control input-lg" placeholder="Password" value="pluto">
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary btn-lg btn-block" id="loginbtn">Login</button>
+                        <a class="btn btn-block btn-lg btn-social btn-facebook" id="facebooklogin">
+                            <i class="fa fa-facebook"></i> Sign in with Facebook
+                        </a>
+                        <a class="btn btn-block btn-lg btn-social btn-github" id="githublogin">
+                            <i class="fa fa-github"></i> Sign in with GitHub
+                        </a>
+                        <a class="btn btn-block btn-lg btn-social btn-google-plus" id="googlelogin">
+                            <i class="fa fa-google-plus"></i> Sign in with Google
+                        </a>
+                        <a class="btn btn-block btn-lg btn-social btn-twitter" id="twitterlogin">
+                            <i class="fa fa-twitter"></i> Sign in with Twitter
+                        </a>
+                        <span class="pull-right"><a href="#" id="register">Register</a></span><span><a href="#">Need help?</a></span>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <div class="col-md-12">
+                    <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

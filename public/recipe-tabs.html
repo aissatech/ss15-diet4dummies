@@ -1,0 +1,34 @@
+<section>
+    <ul class="nav nav-pills">
+        <li ng-class="{active: tab.isSet(1)}">
+            <a href ng-click="tab.setTab(1)">Description</a>
+        </li>
+        <li ng-class="{active: tab.isSet(2)}">
+            <a href ng-click="tab.setTab(2)">Ingredients</a>
+        </li>
+		<li ng-class="{active: tab.isSet(3)}">
+            <a href ng-click="tab.setTab(3)">Preparation</a>
+        </li>
+        <li ng-class="{active: tab.isSet(4)}">
+            <a href ng-click="tab.setTab(4)">Specs</a>
+        </li>
+        <li ng-class="{active: tab.isSet(5)}">
+            <a href ng-click="tab.setTab(5)">Reviews</a>
+        </li>
+    </ul>
+
+    <!-- Recipe Description Directive as element -->
+    <recipe-description ng-show="tab.isSet(1)"></recipe-description>
+
+    <!-- Recipe Ingredients Directive as attribute -->
+    <div class="tab" recipe-ingredients ng-show="tab.isSet(2)"></div>
+	
+	<!-- Recipe Preparation Directive as element -->
+    <recipe-preparation ng-show="tab.isSet(3)"></recipe-preparation>
+
+    <!-- Recipe Specs Directive as attribute -->
+    <div class="tab" recipe-specs ng-show="tab.isSet(4)"></div>
+
+    <!--  Recipe Reviews List Directive as element -->
+    <recipe-reviews ng-show="tab.isSet(5)"></recipe-reviews>
+</section>

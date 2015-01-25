@@ -1,0 +1,6 @@
+{
+  "name": "ss15-diet4dummies",
+  "root": "./public",
+  "clean_urls": true,
+  "error_page": "error.html"
+}

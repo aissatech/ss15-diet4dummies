@@ -1,0 +1,93 @@
+[
+    {
+        "name": "Macedonia",
+        "description": "The macedonia (fruit salad) is a healthy and tasty dessert that makes very few calories. It is a dish suitable for all seasons and can also be prepared and served as a snack for both children and adults.",
+        "preparation": "Wash, dry and cut the fruit into chunks. So grab a bowl and put prepared fruit. Sprinkle with sugar and pour the juice of one lemon. Put the covered container in the refrigerator and let stand at least a couple of hours so that the fruit releases its juice. Remove it from the fridge at the time of serving. You can prepare lots of salads with seasonal fruits , all different and offering delicious : just give rein to their creativity!",
+        "cost": 3.20,
+        "difficulty": 1,
+        "kcalportion": 139,
+        "kcal100g": 49,
+        "fat": 0,
+        "carbohydrates": 12,
+        "protein": 1,
+        "water": 86,
+        "images": [
+            "images/macedonia.jpg",
+            "images/apple.jpg",
+            "images/banana.jpg",
+            "images/coconut.jpg",
+            "images/lemon.jpg",
+            "images/mango.jpg",
+            "images/plums.jpg",
+            "images/pomegranate.jpg",
+            "images/raspberries.jpg",
+            "images/watermelon.jpg"
+        ],
+        "ing1":  "2 apples, preferably golden (350g)",
+        "ing2":  "250 g of strawberries",
+        "ing3":  "1 orange (200g)",
+        "ing4":  "1 mango (150g)",
+        "ing5":  "1 banana (100g)",
+        "ing6":  "2 plums (50g)",
+        "ing7":  "watermelon (50g)",
+        "ing8":  "1 pomegranate (100g)",
+        "ing9":  "1/2 cup lemon juice (62g)",
+        "ing10":  "1 tablespoons sugar (10g)",
+        "reviews": [{
+            "stars": 5,
+            "body": "I love this!",
+            "author": "joe@example.org",
+            "createdOn": 1397490980837
+        }, {
+            "stars": 1,
+            "body": "This macedonia sucks.",
+            "author": "tim@example.org",
+            "createdOn": 1397490980837
+        }]
+    }, {
+        "name": "Salad",
+        "description": "Yummy salad low in calories and fat. Ideal with red meats. Excellent for a light diet.",
+        "preparation": "Clean the salad you prefer and dry it thoroughly. Add remaining ingredients cut as desired. Season with a teaspoon of olive oil, vinegar and salt. To keep the salad ready (not seasoned), counsel to dry it with the help of a centrifuge and place it (without crushing too) in a plastic container wrapped by paper towels.",
+        "cost": 2.50,
+        "difficulty": 1,
+        "kcalportion": 325,
+        "kcal100g": 48.5,
+        "fat": 2.24,
+        "carbohydrates": 5.6,
+        "protein": 1.98,
+        "water": 88.75,
+        "images": [
+            "images/salad.jpg",
+            "images/carrot.jpg",
+            "images/cauliflower.jpg",
+            "images/capsicum.jpg",
+            "images/eggs.jpg",
+            "images/maize.jpg",
+            "images/nuts.jpg",
+            "images/olives.jpg",
+            "images/onions.jpg",
+            "images/tomato.jpg"
+        ],
+        "ing1":  "lettuce (100g)",
+        "ing2":  "salad tomatoes (200 g)",
+        "ing3":  "red peppers (200g)",
+        "ing4":  "black olives (15g)",
+        "ing5":  "1 onion (40g)",
+        "ing6":  "maize (25g)",
+        "ing7":  "1 egg (60g)",
+        "ing8":  "1 carrot (80g)",
+        "ing9":  "1 tablespoon extra virgin olive oil (5g)",
+        "ing10":  "1 tablespoons balsamic vinegar (5g)",
+        "reviews": [{
+            "stars": 5,
+            "body": "I love this!",
+            "author": "joe@example.org",
+            "createdOn": 1397490980837
+        }, {
+            "stars": 1,
+            "body": "This salad sucks.",
+            "author": "tim@example.org",
+            "createdOn": 1397490980837
+        }]
+    }
+]
