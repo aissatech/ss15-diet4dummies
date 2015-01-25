@@ -1,1 +1,3 @@
-# ss15-diet4dummies 
+# Cookbook
+
+Using: AngularJS and Bootstrap
