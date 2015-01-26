@@ -7,6 +7,8 @@ Shows recepies and infos about ingredients, preparation, special nutritional dat
 
 AngularJS v1.2.18
 
+JSON
+
 Bootstrap v3.0.0
 
 IDE: WebStorm 8.0.4
