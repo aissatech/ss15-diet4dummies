@@ -1,6 +1,6 @@
 # Diet4Dumies 
 
-A cookbook webapp created during the @StaticShowDown hackathon
+A cookbook webapp created during the @StaticShowdown hackathon
 
 ####Using: 
 
